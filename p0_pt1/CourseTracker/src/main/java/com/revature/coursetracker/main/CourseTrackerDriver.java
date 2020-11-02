@@ -84,6 +84,8 @@ public class CourseTrackerDriver {
 	
 	private static boolean setTeacher() {
 		
+		log.info("Adding teacher to course");
+		
 		// get teacher info
 		System.out.println("What is the teachers first name?");
 		String firstName = scan.nextLine();
@@ -94,14 +96,15 @@ public class CourseTrackerDriver {
 		
 		Teacher teacher = new Teacher(firstName, lastName, prefixName);
 		
-		if(myCourse.setTeacher(teacher)) {
-			return true;
-		}
+		myCourse.setTeacher(teacher);
 		
-		return false;
+		return true;
 	}
 	
 	private static boolean addStudent() {
+		
+		log.info("Adding student to course list");
+		
 		// get student info
 		System.out.println("What is the students first name?");
 		String firstName = scan.nextLine();
@@ -112,7 +115,7 @@ public class CourseTrackerDriver {
 		do {
 			System.out.println("What is the students gpa? (ex: 3.4)");
 			userInput = scan.nextLine(); // pulled in user input as a string 
-			gpa = Double.parseDouble(userInput); // and parse as a double to remove the trailing newline char from system.in
+			gpa = Double.parseDouble(userInput); // and parse as a double to remove the trailing newline char from system.in 
 		} while(gpa > 4 || gpa < 0);
 		
 		Student student = new Student(firstName, lastName, gpa);
@@ -125,33 +128,35 @@ public class CourseTrackerDriver {
 	
 	private static boolean addAssignment() {
 		
+		log.info("Adding assignment to course list");
+		
 		// get student info
-			System.out.println("What is the assignment titled?");
-			String title = scan.nextLine();
-			
-			LocalDate startDate = null;
-			LocalDate dueDate = null;
-			do {
-				System.out.println("When is this assignment assigned? Format: yyyy-mm-dd");
-				String start = scan.nextLine();
-				System.out.println("When is this assignment due? Format: yyyy-mm-dd");
-				String due = scan.nextLine();
+		System.out.println("What is the assignment titled?");
+		String title = scan.nextLine();
+		
+		LocalDate startDate = null;
+		LocalDate dueDate = null;
+		do {
+			System.out.println("When is this assignment assigned? Format: yyyy-mm-dd");
+			String start = scan.nextLine();
+			System.out.println("When is this assignment due? Format: yyyy-mm-dd");
+			String due = scan.nextLine();
 
-				try {
-					startDate = LocalDate.parse(start);
-					dueDate = LocalDate.parse(due);
-				} catch (DateTimeParseException e) {
-					System.out.println("Could not parse dates. Use format yyyy-mm-dd");
-					log.warn("DateTimeParseException caught", e);
-				}
-			} while(startDate == null || dueDate == null);
-			
-			Assignment assignment = new Assignment(title, startDate, dueDate);
-			
-			if(myCourse.addAssignment(assignment))
-				return true;
-			
-			return false;
+			try {
+				startDate = LocalDate.parse(start);
+				dueDate = LocalDate.parse(due);
+			} catch (DateTimeParseException e) {
+				System.out.println("Could not parse dates. Use format yyyy-mm-dd");
+				log.warn("DateTimeParseException caught", e);
+			}
+		} while(startDate == null || dueDate == null);
+		
+		Assignment assignment = new Assignment(title, startDate, dueDate);
+		
+		if(myCourse.addAssignment(assignment))
+			return true;
+		
+		return false;
 	}
 
 }
