@@ -1,0 +1,2 @@
+2020-11-02 12:14:09 INFO  root:25 - Program has started
+2020-11-02 12:17:51 INFO  root:25 - Program has started

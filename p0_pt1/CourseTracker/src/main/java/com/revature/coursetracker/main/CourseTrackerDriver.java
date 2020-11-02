@@ -94,9 +94,11 @@ public class CourseTrackerDriver {
 		
 		Teacher teacher = new Teacher(firstName, lastName, prefixName);
 		
-		myCourse.setTeacher(teacher);
+		if(myCourse.setTeacher(teacher)) {
+			return true;
+		}
 		
-		return true;
+		return false;
 	}
 	
 	private static boolean addStudent() {
@@ -106,9 +108,11 @@ public class CourseTrackerDriver {
 		System.out.println("What is the students last name?");
 		String lastName = scan.nextLine();
 		double gpa;
+		String userInput;
 		do {
 			System.out.println("What is the students gpa? (ex: 3.4)");
-			gpa = scan.nextDouble();
+			userInput = scan.nextLine(); // pulled in user input as a string 
+			gpa = Double.parseDouble(userInput); // and parse as a double to remove the trailing newline char from system.in
 		} while(gpa > 4 || gpa < 0);
 		
 		Student student = new Student(firstName, lastName, gpa);
