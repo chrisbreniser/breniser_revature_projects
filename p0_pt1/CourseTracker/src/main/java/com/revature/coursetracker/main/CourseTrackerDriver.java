@@ -29,6 +29,21 @@ public class CourseTrackerDriver {
 		System.out.println("What is the name of this course?");
 		userInput = scan.nextLine();
 		myCourse.setCourseName(userInput);
+		
+		boolean correctPass = false;
+		String password = "hunter2"; //awful way to do this... but it works for now
+		
+		// TODO make a class for authentication and use stored passwords form database setup down the road
+		do {
+			System.out.println("What is the course password?");
+			userInput = scan.nextLine();
+			if(!userInput.equals(password)) {
+				System.out.println("Incorrect password. Please try again.");
+			}
+			else {
+				correctPass = true;
+			}
+		} while(!correctPass);
 
 		do {
 			System.out.println("Please choose one of the following:");
