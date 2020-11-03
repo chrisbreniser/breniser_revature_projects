@@ -111,7 +111,7 @@ public class Course {
 		return true;
 	}
 	
-	/*
+	/**
 	 * Adds student to students set
 	 * @param student
 	 * @return boolean	
@@ -122,7 +122,7 @@ public class Course {
 		return false;
 	}
 	
-	/*
+	/**
 	 * Adds assignment to assignment set
 	 * @param assignment
 	 * @return boolean	
