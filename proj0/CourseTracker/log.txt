@@ -1,0 +1,89 @@
+2020-11-08 18:27:20 INFO  root:19 - TeacherController.createTeacher[Reseived ctx and begining parsing]
+2020-11-08 18:27:20 INFO  root:20 - TeacherService.createTeacher[received Teacher [firstName=chris, lastName=breniser, user=brenisec, pass=hunter3, email=breniser@hotmail.io, courses=null] and is sending to Dao]
+2020-11-08 18:27:20 INFO  root:29 - TeacherDaoPostgres.CreateTeacher
+[Received Teacher [firstName=chris, lastName=breniser, user=brenisec, pass=hunter3, email=breniser@hotmail.io, courses=null] in Dao. Creating insert Statement]
+2020-11-08 18:27:20 INFO  root:17 - ConnectionUtil.createConnection[Attempting to start connection using DriverManager]
+2020-11-08 18:27:20 INFO  root:39 - Got passed the prepared statement instatiation: insert into teacher (firstname, lastname, "user", pass, email) values (?, ?, ?, ?, ?)
+2020-11-08 18:27:20 INFO  root:47 - TeacherDaoPostgres.createTeacher try block[Attempting to execute:
+insert into teacher (firstname, lastname, "user", pass, email) values ('chris', 'breniser', 'brenisec', 'hunter3', 'breniser@hotmail.io')]
+2020-11-08 18:27:20 INFO  root:51 - TeacherDaoPostgres.createTeacher try block[Effected: 1 line(s)]
+2020-11-08 18:28:03 INFO  root:19 - TeacherController.createTeacher[Reseived ctx and begining parsing]
+2020-11-08 18:28:03 INFO  root:20 - TeacherService.createTeacher[received Teacher [firstName=chris, lastName=breniser, user=brenisec, pass=hunter2, email=breniser@hotmail.io, courses=null] and is sending to Dao]
+2020-11-08 18:28:03 INFO  root:29 - TeacherDaoPostgres.CreateTeacher
+[Received Teacher [firstName=chris, lastName=breniser, user=brenisec, pass=hunter2, email=breniser@hotmail.io, courses=null] in Dao. Creating insert Statement]
+2020-11-08 18:28:03 INFO  root:17 - ConnectionUtil.createConnection[Attempting to start connection using DriverManager]
+2020-11-08 18:28:03 INFO  root:39 - Got passed the prepared statement instatiation: insert into teacher (firstname, lastname, "user", pass, email) values (?, ?, ?, ?, ?)
+2020-11-08 18:28:03 INFO  root:47 - TeacherDaoPostgres.createTeacher try block[Attempting to execute:
+insert into teacher (firstname, lastname, "user", pass, email) values ('chris', 'breniser', 'brenisec', 'hunter2', 'breniser@hotmail.io')]
+2020-11-08 18:28:03 INFO  root:51 - TeacherDaoPostgres.createTeacher try block[Effected: 1 line(s)]
+2020-11-08 19:00:31 INFO  root:19 - TeacherController.createTeacher[Reseived ctx and begining parsing]
+2020-11-08 19:00:31 INFO  root:20 - TeacherService.createTeacher[received Teacher [firstName=chris, lastName=breniser, user=brenisec, pass=hunter2, email=breniser@hotmail.io] and is sending to Dao]
+2020-11-08 19:00:31 INFO  root:29 - TeacherDaoPostgres.CreateTeacher
+[Received Teacher [firstName=chris, lastName=breniser, user=brenisec, pass=hunter2, email=breniser@hotmail.io] in Dao. Creating insert Statement]
+2020-11-08 19:00:31 INFO  root:17 - ConnectionUtil.createConnection[Attempting to start connection using DriverManager]
+2020-11-08 19:00:31 INFO  root:39 - Got passed the prepared statement instatiation: insert into teacher (firstname, lastname, "user", pass, email) values (?, ?, ?, ?, ?)
+2020-11-08 19:00:31 INFO  root:47 - TeacherDaoPostgres.createTeacher try block[Attempting to execute:
+insert into teacher (firstname, lastname, "user", pass, email) values ('chris', 'breniser', 'brenisec', 'hunter2', 'breniser@hotmail.io')]
+2020-11-08 19:00:31 INFO  root:51 - TeacherDaoPostgres.createTeacher try block[Effected: 1 line(s)]
+2020-11-08 19:05:22 INFO  root:19 - TeacherController.createTeacher[Reseived ctx and begining parsing]
+2020-11-08 19:05:23 INFO  root:20 - TeacherService.createTeacher[received Teacher [firstName=chris, lastName=breniser, user=brenisec, pass=hunter2, email=breniser@hotmail.io] and is sending to Dao]
+2020-11-08 19:05:23 INFO  root:29 - TeacherDaoPostgres.CreateTeacher
+[Received Teacher [firstName=chris, lastName=breniser, user=brenisec, pass=hunter2, email=breniser@hotmail.io] in Dao. Creating insert Statement]
+2020-11-08 19:05:23 INFO  root:17 - ConnectionUtil.createConnection[Attempting to start connection using DriverManager]
+2020-11-08 19:05:23 INFO  root:39 - Got passed the prepared statement instatiation: insert into teacher (firstname, lastname, "user", pass, email) values (?, ?, ?, ?, ?)
+2020-11-08 19:05:23 INFO  root:47 - TeacherDaoPostgres.createTeacher try block[Attempting to execute:
+insert into teacher (firstname, lastname, "user", pass, email) values ('chris', 'breniser', 'brenisec', 'hunter2', 'breniser@hotmail.io')]
+2020-11-08 19:05:23 INFO  root:51 - TeacherDaoPostgres.createTeacher try block[Effected: 1 line(s)]
+2020-11-08 20:05:42 INFO  root:40 - TeacherController.getTeacherById[Reseived ctx and begining parsing out id]
+2020-11-08 20:05:42 INFO  root:59 - TeacherDaoPostgres.getTeacherById
+[Received 9 in Dao. Creating select Statement]
+2020-11-08 20:05:42 INFO  root:17 - ConnectionUtil.createConnection[Attempting to start connection using DriverManager]
+2020-11-08 20:05:43 INFO  root:68 - Got passed the prepared statement instatiation: select teacherid, firstname, lastname, user, email  from teacher where teacherid = ?
+2020-11-08 20:05:43 INFO  root:72 - TeacherDaoPostgres.getTeacherById[In try block: Attempting to execute:
+select teacherid, firstname, lastname, user, email  from teacher where teacherid = 9]
+2020-11-08 20:05:43 ERROR root:81 - TeacherDaoPostgres.createTeacher[In catch block: SQLException: ResultSet not positioned properly, perhaps you need to call next.]
+2020-11-08 20:13:00 INFO  root:40 - TeacherController.getTeacherById[Reseived ctx and begining parsing out id]
+2020-11-08 20:13:00 INFO  root:44 - TeacherController.getTeacherById[Got 'null' from form data
+2020-11-08 20:16:32 INFO  root:40 - TeacherController.getTeacherById[Reseived ctx and begining parsing out id]
+2020-11-08 20:16:32 INFO  root:44 - TeacherController.getTeacherById[Got '9' from form data
+2020-11-08 20:16:32 INFO  root:59 - TeacherDaoPostgres.getTeacherById[Received 9 in Dao. Creating select Statement]
+2020-11-08 20:16:32 INFO  root:17 - ConnectionUtil.createConnection[Attempting to start connection using DriverManager]
+2020-11-08 20:16:32 INFO  root:68 - TeacherDaoPostgres.getTeacherById[Got passed the prepared statement instantiation: select teacherid, firstname, lastname, user, email  from teacher where teacherid = ?]
+2020-11-08 20:16:32 INFO  root:72 - TeacherDaoPostgres.getTeacherById[In try block: Attempting to execute:
+select teacherid, firstname, lastname, user, email  from teacher where teacherid = 9]
+2020-11-08 20:16:32 INFO  root:82 - TeacherDaoPostgres.getTeacherById[In try block: Result of query as a teacher object:Teacher [firstName=chris, lastName=breniser, user=postgres, pass=, email=breniser@hotmail.io]
+2020-11-08 20:33:23 INFO  root:40 - TeacherController.getTeacherById[Reseived ctx and begining parsing out id]
+2020-11-08 20:33:23 INFO  root:44 - TeacherController.getTeacherById[Got '8' from form data
+2020-11-08 20:33:23 INFO  root:59 - TeacherDaoPostgres.getTeacherById[Received 8 in Dao. Creating select Statement]
+2020-11-08 20:33:23 INFO  root:17 - ConnectionUtil.createConnection[Attempting to start connection using DriverManager]
+2020-11-08 20:33:23 INFO  root:68 - TeacherDaoPostgres.getTeacherById[Got passed the prepared statement instantiation: select teacherid, firstname, lastname, user, email  from teacher where teacherid = ?]
+2020-11-08 20:33:23 INFO  root:72 - TeacherDaoPostgres.getTeacherById[In try block: Attempting to execute:
+select teacherid, firstname, lastname, user, email  from teacher where teacherid = 8]
+2020-11-08 20:33:23 INFO  root:82 - TeacherDaoPostgres.getTeacherById[In try block: Result of query as a teacher object:Teacher [firstName=chris, lastName=breniser, user=postgres, pass=, email=breniser@hotmail.io]
+2020-11-08 20:44:49 INFO  root:40 - TeacherController.getTeacherById[Reseived ctx and begining parsing out id]
+2020-11-08 20:44:49 INFO  root:44 - TeacherController.getTeacherById[Got '8' from form data
+2020-11-08 20:44:49 INFO  root:59 - TeacherDaoPostgres.getTeacherById[Received 8 in Dao. Creating select Statement]
+2020-11-08 20:44:49 INFO  root:17 - ConnectionUtil.createConnection[Attempting to start connection using DriverManager]
+2020-11-08 20:44:49 INFO  root:68 - TeacherDaoPostgres.getTeacherById[Got passed the prepared statement instantiation: select teacherid, firstname, lastname, user, email  from teacher where teacherid = ?]
+2020-11-08 20:44:49 INFO  root:72 - TeacherDaoPostgres.getTeacherById[In try block: Attempting to execute:
+select teacherid, firstname, lastname, user, email  from teacher where teacherid = 8]
+2020-11-08 20:44:49 INFO  root:82 - TeacherDaoPostgres.getTeacherById[In try block: Result of query as a teacher object:Teacher [firstName=chris, lastName=breniser, user=postgres, pass=, email=breniser@hotmail.io]
+2020-11-08 20:44:52 INFO  root:19 - TeacherController.createTeacher[Reseived ctx and begining parsing out teacher data]
+2020-11-08 20:44:52 INFO  root:20 - TeacherService.createTeacher[received Teacher [firstName=chris, lastName=breniser, user=brenisec, pass=hunter2, email=breniser@hotmail.io] and is sending to Dao]
+2020-11-08 20:44:52 INFO  root:29 - TeacherDaoPostgres.CreateTeacher
+[Received Teacher [firstName=chris, lastName=breniser, user=brenisec, pass=hunter2, email=breniser@hotmail.io] in Dao. Creating insert Statement]
+2020-11-08 20:44:52 INFO  root:17 - ConnectionUtil.createConnection[Attempting to start connection using DriverManager]
+2020-11-08 20:44:52 INFO  root:39 - Got passed the prepared statement instatiation: insert into teacher (firstname, lastname, "user", pass, email) values (?, ?, ?, ?, ?)
+2020-11-08 20:44:52 INFO  root:47 - TeacherDaoPostgres.createTeacher[In try block: Attempting to execute:
+insert into teacher (firstname, lastname, "user", pass, email) values ('chris', 'breniser', 'brenisec', 'hunter2', 'breniser@hotmail.io')]
+2020-11-08 20:44:52 INFO  root:51 - TeacherDaoPostgres.createTeacher[In try block: Effected: 1 line(s)]
+2020-11-08 21:35:50 INFO  root:56 - TeacherController.getTeacherList[Reseived ctx. Calling service]
+2020-11-08 21:35:50 INFO  root:17 - ConnectionUtil.createConnection[Attempting to start connection using DriverManager]
+2020-11-08 21:35:50 INFO  root:104 - TeacherDaoPostgres.getTeacherList[In try block: Attempting to execute:
+select teacherid, firstname, lastname, user, email from teacher]
+2020-11-08 21:35:50 INFO  root:112 - TeacherDaoPostgres.getTeacherList[In try block: Result of query as a teacher object:[Teacher [firstName=chris, lastName=breniser, user=postgres, pass=, email=breniser@hotmail.io], Teacher [firstName=chris, lastName=breniser, user=postgres, pass=, email=breniser@hotmail.io], Teacher [firstName=chris, lastName=breniser, user=postgres, pass=, email=breniser@hotmail.io], Teacher [firstName=chris, lastName=breniser, user=postgres, pass=, email=breniser@hotmail.io]]
+2020-11-08 21:37:32 INFO  root:56 - TeacherController.getTeacherList[Reseived ctx. Calling service]
+2020-11-08 21:37:32 INFO  root:17 - ConnectionUtil.createConnection[Attempting to start connection using DriverManager]
+2020-11-08 21:37:32 INFO  root:104 - TeacherDaoPostgres.getTeacherList[In try block: Attempting to execute:
+select teacherid, firstname, lastname, user, email from teacher]
+2020-11-08 21:37:32 INFO  root:112 - TeacherDaoPostgres.getTeacherList[In try block: Result of query as a teacher object:[Teacher [teacherId=7, firstName=chris, lastName=breniser, user=postgres, pass=, email=breniser@hotmail.io], Teacher [teacherId=8, firstName=chris, lastName=breniser, user=postgres, pass=, email=breniser@hotmail.io], Teacher [teacherId=9, firstName=chris, lastName=breniser, user=postgres, pass=, email=breniser@hotmail.io], Teacher [teacherId=10, firstName=chris, lastName=breniser, user=postgres, pass=, email=breniser@hotmail.io]]
