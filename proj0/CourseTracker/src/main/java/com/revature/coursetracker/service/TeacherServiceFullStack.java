@@ -21,6 +21,12 @@ public class TeacherServiceFullStack implements TeacherService {
 		teacherDao.createTeacher(teacher);
 		return teacher;
 	}
+	
+	@Override
+	public Teacher getTeacherById(int teacherId) {
+		Teacher teacher = teacherDao.getTeacherById(teacherId);
+		return teacher;
+	}
 
 	@Override
 	public void addCourse(int teacherId, Course course) {

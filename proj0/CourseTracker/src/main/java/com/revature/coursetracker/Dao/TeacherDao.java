@@ -6,7 +6,7 @@ public interface TeacherDao {
 	
 	public void createTeacher(Teacher teacher);
 	
-	public void readTeacher(int teacherId);
+	public Teacher getTeacherById(int teacherId);
 	
 	public void readAllTeachers();
 	

@@ -16,7 +16,7 @@ public class TeacherController {
 	
 	public void createTeacher(Context ctx) {
 
-		log.info("TeacherController.createTeacher[Reseived ctx and begining parsing]");
+		log.info("TeacherController.createTeacher[Reseived ctx and begining parsing out teacher data]");
 		
 		String firstname = ctx.formParam("firstname");
 		
@@ -37,6 +37,15 @@ public class TeacherController {
 	
 	public void getTeacherById(Context ctx) {
 		
+		log.info("TeacherController.getTeacherById[Reseived ctx and begining parsing out id]");
+		
+		String id = ctx.formParam("teacherid");
+		
+		log.info("TeacherController.getTeacherById[Got '" + id + "' from form data");
+		
+		Teacher teacher = teacherService.getTeacherById(Integer.parseInt(id));
+				
+		ctx.html(teacher.toString());
 	}
 	
 }

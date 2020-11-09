@@ -44,20 +44,48 @@ public class TeacherDaoPostgres implements TeacherDao {
 			preparedStatement.setString(4, teacher.getPass());
 			preparedStatement.setString(5, teacher.getEmail());
 			
-			log.info("TeacherDaoPostgres.createTeacher try block[Attempting to execute:\n" + preparedStatement + "]"); 
+			log.info("TeacherDaoPostgres.createTeacher[In try block: Attempting to execute:\n" + preparedStatement + "]"); 
 			
 			int rowsAffected = preparedStatement.executeUpdate();
 			conn.commit();
-			log.info("TeacherDaoPostgres.createTeacher try block[Effected: " + rowsAffected + " line(s)]"); 
+			log.info("TeacherDaoPostgres.createTeacher[In try block: Effected: " + rowsAffected + " line(s)]"); 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			log.error("TeacherDaoPostgres.createTeacher catch block[SQLException: " + e.getMessage() + "]");
+			log.error("TeacherDaoPostgres.createTeacher[In catch block: SQLException: " + e.getMessage() + "]");
 		}
 	}
 
 	@Override
-	public void readTeacher(int teacherId) {
-		// TODO Auto-generated method stub
+	public Teacher getTeacherById(int teacherId) {
+		log.info("TeacherDaoPostgres.getTeacherById[Received " + teacherId + " in Dao. Creating select Statement]");
+		
+		Teacher teacher = null;
+		
+		String sql = "select teacherid, firstname, lastname, user, email  from teacher where teacherid = ?;";
+		
+		try (Connection conn = connUtil.createConnection()) {
+			preparedStatement = conn.prepareStatement(sql);
+			
+			log.info("TeacherDaoPostgres.getTeacherById[Got passed the prepared statement instantiation: " + preparedStatement + "]");
+			
+			preparedStatement.setInt(1, teacherId);
+			
+			log.info("TeacherDaoPostgres.getTeacherById[In try block: Attempting to execute:\n" + preparedStatement + "]"); 
+			
+			ResultSet rs = preparedStatement.executeQuery();
+			
+			while(rs.next()) {
+				
+				teacher = new Teacher(rs.getString("firstname"), rs.getString("lastname"), rs.getString("user"), "", rs.getString("email"));
+				
+			}
+			
+			log.info("TeacherDaoPostgres.getTeacherById[In try block: Result of query as a teacher object:" + teacher.toString());
+			
+		} catch (SQLException e) {
+			log.error("TeacherDaoPostgres.getTeacherById[In catch block: SQLException: " + e.getMessage() + "]");
+		}
+		
+		return teacher;
 
 	}
 

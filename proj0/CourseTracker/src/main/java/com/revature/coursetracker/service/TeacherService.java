@@ -9,6 +9,8 @@ public interface TeacherService {
 	
 	public Teacher createTeacher(Teacher teacher);
 	
+	public Teacher getTeacherById(int teacherId);
+	
 	public void addCourse(int teacherId, Course course);
 	
 	public void removeCourse(int courseId);
