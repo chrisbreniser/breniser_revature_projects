@@ -31,10 +31,9 @@ public class CourseTest {
 		student = new Student("Hank", "Hill", 2.4);
 		students.add(student);
 		
-		
 		String start = "2020-10-10";
 		String due = "2020-10-20";
-		assignment = new Assignment("Project 1", LocalDate.parse(start), LocalDate.parse(due));
+		assignment = new Assignment("Project 1", "A quick test project to get you going", LocalDate.parse(start), LocalDate.parse(due));
 		assignments.add(assignment);
 		
 	}
@@ -53,6 +52,12 @@ public class CourseTest {
 
 	@Test
 	public void addStudentTest() {
+		course.addStudent(student);
+		assertEquals(students, course.getStudents());
+	}
+	
+	@Test
+	public void addSecondStudentTest() {
 		course.addStudent(student);
 		assertEquals(students, course.getStudents());
 	}

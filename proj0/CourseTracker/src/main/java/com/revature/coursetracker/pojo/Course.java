@@ -34,14 +34,6 @@ public class Course {
 		this.courseName = courseName;
 	}
 
-	public Teacher getTeacher() {
-		return teacher;
-	}
-
-	public void setTeacher(Teacher teacher) {
-		this.teacher = teacher;
-	}
-
 	public Set<Student> getStudents() {
 		return students;
 	}

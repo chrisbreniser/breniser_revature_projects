@@ -9,6 +9,8 @@ public class Assignment {
 	
 	private String title;
 	
+	private String description;
+	
 	private LocalDate startDate;
 	
 	private LocalDate dueDate;
@@ -18,13 +20,14 @@ public class Assignment {
 		this.id = UUID.randomUUID();
 	}
 
-	public Assignment(String title, LocalDate startDate, LocalDate dueDate) {
+	public Assignment(String title, String description, LocalDate startDate, LocalDate dueDate) {
 		this();
 		this.title = title;
+		this.description = description;
 		this.startDate = startDate;
 		this.dueDate = dueDate;
 	}
-	
+
 	public UUID getId() {
 		return id;
 	}
@@ -35,6 +38,14 @@ public class Assignment {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public LocalDate getStartDate() {
@@ -57,6 +68,7 @@ public class Assignment {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + ((dueDate == null) ? 0 : dueDate.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((startDate == null) ? 0 : startDate.hashCode());
@@ -73,6 +85,11 @@ public class Assignment {
 		if (getClass() != obj.getClass())
 			return false;
 		Assignment other = (Assignment) obj;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
 		if (dueDate == null) {
 			if (other.dueDate != null)
 				return false;
@@ -98,9 +115,8 @@ public class Assignment {
 
 	@Override
 	public String toString() {
-		return "Assignment [id=" + id + ", title=" + title + ", startDate=" + startDate + ", dueDate=" + dueDate + "]";
+		return "Assignment [id=" + id + ", title=" + title + ", description=" + description + ", startDate=" + startDate
+				+ ", dueDate=" + dueDate + "]";
 	}
-	
-	
-	
+
 }
