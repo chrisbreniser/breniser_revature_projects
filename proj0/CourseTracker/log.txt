@@ -16,3 +16,21 @@ insert into teacher (firstname, lastname, "user", pass, email) values ('chris', 
 2020-11-08 18:28:03 INFO  root:47 - TeacherDaoPostgres.createTeacher try block[Attempting to execute:
 insert into teacher (firstname, lastname, "user", pass, email) values ('chris', 'breniser', 'brenisec', 'hunter2', 'breniser@hotmail.io')]
 2020-11-08 18:28:03 INFO  root:51 - TeacherDaoPostgres.createTeacher try block[Effected: 1 line(s)]
+2020-11-08 19:00:31 INFO  root:19 - TeacherController.createTeacher[Reseived ctx and begining parsing]
+2020-11-08 19:00:31 INFO  root:20 - TeacherService.createTeacher[received Teacher [firstName=chris, lastName=breniser, user=brenisec, pass=hunter2, email=breniser@hotmail.io] and is sending to Dao]
+2020-11-08 19:00:31 INFO  root:29 - TeacherDaoPostgres.CreateTeacher
+[Received Teacher [firstName=chris, lastName=breniser, user=brenisec, pass=hunter2, email=breniser@hotmail.io] in Dao. Creating insert Statement]
+2020-11-08 19:00:31 INFO  root:17 - ConnectionUtil.createConnection[Attempting to start connection using DriverManager]
+2020-11-08 19:00:31 INFO  root:39 - Got passed the prepared statement instatiation: insert into teacher (firstname, lastname, "user", pass, email) values (?, ?, ?, ?, ?)
+2020-11-08 19:00:31 INFO  root:47 - TeacherDaoPostgres.createTeacher try block[Attempting to execute:
+insert into teacher (firstname, lastname, "user", pass, email) values ('chris', 'breniser', 'brenisec', 'hunter2', 'breniser@hotmail.io')]
+2020-11-08 19:00:31 INFO  root:51 - TeacherDaoPostgres.createTeacher try block[Effected: 1 line(s)]
+2020-11-08 19:05:22 INFO  root:19 - TeacherController.createTeacher[Reseived ctx and begining parsing]
+2020-11-08 19:05:23 INFO  root:20 - TeacherService.createTeacher[received Teacher [firstName=chris, lastName=breniser, user=brenisec, pass=hunter2, email=breniser@hotmail.io] and is sending to Dao]
+2020-11-08 19:05:23 INFO  root:29 - TeacherDaoPostgres.CreateTeacher
+[Received Teacher [firstName=chris, lastName=breniser, user=brenisec, pass=hunter2, email=breniser@hotmail.io] in Dao. Creating insert Statement]
+2020-11-08 19:05:23 INFO  root:17 - ConnectionUtil.createConnection[Attempting to start connection using DriverManager]
+2020-11-08 19:05:23 INFO  root:39 - Got passed the prepared statement instatiation: insert into teacher (firstname, lastname, "user", pass, email) values (?, ?, ?, ?, ?)
+2020-11-08 19:05:23 INFO  root:47 - TeacherDaoPostgres.createTeacher try block[Attempting to execute:
+insert into teacher (firstname, lastname, "user", pass, email) values ('chris', 'breniser', 'brenisec', 'hunter2', 'breniser@hotmail.io')]
+2020-11-08 19:05:23 INFO  root:51 - TeacherDaoPostgres.createTeacher try block[Effected: 1 line(s)]

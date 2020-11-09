@@ -83,7 +83,7 @@ public class TeacherDaoPostgresTest {
 	public void createTeacherTest() throws SQLException{
 		
 		// create teacher to use in test
-		Teacher teacher = new Teacher("chris", "breniser", "brenisec", "hunter2", "brenisec@hotmail.io", null);
+		Teacher teacher = new Teacher("chris", "breniser", "brenisec", "hunter2", "brenisec@hotmail.io");
 		
 		// call dao to create teacher
 		teacherDao.createTeacher(teacher);

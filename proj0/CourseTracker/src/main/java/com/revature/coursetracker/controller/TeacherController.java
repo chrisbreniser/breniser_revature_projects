@@ -28,11 +28,15 @@ public class TeacherController {
 
 		String email = ctx.formParam("email");
 		
-		Teacher teacher = new Teacher(firstname, lastname, user, pass, email, null);
+		Teacher teacher = new Teacher(firstname, lastname, user, pass, email);
 		
 		teacherService.createTeacher(teacher);
 				
 		ctx.html("Created: " + teacher.toString());
 	} 
+	
+	public void getTeacherById(Context ctx) {
+		
+	}
 	
 }
