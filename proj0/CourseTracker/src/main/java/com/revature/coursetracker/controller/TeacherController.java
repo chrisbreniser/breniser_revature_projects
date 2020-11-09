@@ -1,5 +1,8 @@
 package com.revature.coursetracker.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
 import com.revature.coursetracker.pojo.Teacher;
@@ -46,6 +49,22 @@ public class TeacherController {
 		Teacher teacher = teacherService.getTeacherById(Integer.parseInt(id));
 				
 		ctx.html(teacher.toString());
+	}
+
+	public void getTeacherList(Context ctx) {
+		
+		log.info("TeacherController.getTeacherList[Reseived ctx. Calling service]");
+		
+		List<Teacher> teachers = teacherService.getTeacherList();
+		
+		String teacherList = "";
+		
+		for(Teacher s : teachers) {
+			teacherList += s.toString() + "\n";
+		}
+		
+		ctx.html(teacherList);
+		
 	}
 	
 }

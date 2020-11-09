@@ -1,5 +1,8 @@
 package com.revature.coursetracker.Dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.revature.coursetracker.pojo.Teacher;
 
 public interface TeacherDao {
@@ -8,10 +11,11 @@ public interface TeacherDao {
 	
 	public Teacher getTeacherById(int teacherId);
 	
-	public void readAllTeachers();
+	public List<Teacher> getTeacherList();
 	
 	public void updateTeacher(int teacherId, Teacher teacher);
 	
 	public void deleteTeacher(int teacherid);
+
 
 }

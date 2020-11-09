@@ -1,5 +1,8 @@
 package com.revature.coursetracker.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
 import com.revature.coursetracker.Dao.TeacherDao;
@@ -26,6 +29,14 @@ public class TeacherServiceFullStack implements TeacherService {
 	public Teacher getTeacherById(int teacherId) {
 		Teacher teacher = teacherDao.getTeacherById(teacherId);
 		return teacher;
+	}
+	
+	@Override
+	public List<Teacher> getTeacherList() {
+		
+		List<Teacher> teacherList = teacherDao.getTeacherList();
+				
+		return teacherList;
 	}
 
 	@Override

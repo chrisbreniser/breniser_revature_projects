@@ -1,5 +1,7 @@
 package com.revature.coursetracker.service;
 
+import java.util.List;
+
 import com.revature.coursetracker.pojo.Assignment;
 import com.revature.coursetracker.pojo.Course;
 import com.revature.coursetracker.pojo.Student;
@@ -11,6 +13,8 @@ public interface TeacherService {
 	
 	public Teacher getTeacherById(int teacherId);
 	
+	public List<Teacher> getTeacherList();
+
 	public void addCourse(int teacherId, Course course);
 	
 	public void removeCourse(int courseId);
@@ -26,5 +30,6 @@ public interface TeacherService {
 	public void addAssignmentToCourseById(int teacherId, int courseId, Assignment assignment);
 	
 	public void removeAssignmentFromCourse(int teacherId, int courseId, int assignmentId);
+
 
 }

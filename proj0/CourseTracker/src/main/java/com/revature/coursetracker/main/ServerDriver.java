@@ -18,6 +18,7 @@ public class ServerDriver {
 		app.get("/hello2", ctx -> ctx.result("Go Beaves"));
 		app.post("/teacher/createTeacher", ctx -> teacherController.createTeacher(ctx));
 		app.get("/teacher/getTeacherById", ctx -> teacherController.getTeacherById(ctx));
+		app.get("/teacher/getTeacherList", ctx -> teacherController.getTeacherList(ctx));
 //		app.post("/createStudent", ctx -> studentController.createStudent(ctx));
 //		app.post("/createStudent", ctx -> studentController.createStudent(ctx));
 //		app.post("/createStudent", ctx -> studentController.createStudent(ctx));

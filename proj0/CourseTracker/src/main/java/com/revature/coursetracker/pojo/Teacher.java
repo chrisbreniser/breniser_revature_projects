@@ -3,6 +3,8 @@ package com.revature.coursetracker.pojo;
 
 public class Teacher {
 	
+	private int teacherId;
+	
 	private String firstName;
 	
 	private String lastName;
@@ -20,6 +22,26 @@ public class Teacher {
 		this.user = user;
 		this.pass = pass;
 		this.email = email;
+	}
+	
+	public Teacher(int teacherId, String firstName, String lastName, String user, String pass, String email) {
+		super();
+		this.teacherId = teacherId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.user = user;
+		this.pass = pass;
+		this.email = email;
+	}
+
+
+
+	public int getTeacherId() {
+		return teacherId;
+	}
+
+	public void setTeacherId(int teacherId) {
+		this.teacherId = teacherId;
 	}
 
 	public String getFirstName() {
@@ -62,10 +84,12 @@ public class Teacher {
 		this.email = email;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "Teacher [firstName=" + firstName + ", lastName=" + lastName + ", user=" + user + ", pass=" + pass
-				+ ", email=" + email + "]";
+		return "Teacher [teacherId=" + teacherId + ", firstName=" + firstName + ", lastName=" + lastName + ", user="
+				+ user + ", pass=" + pass + ", email=" + email + "]";
 	}
 
 	@Override

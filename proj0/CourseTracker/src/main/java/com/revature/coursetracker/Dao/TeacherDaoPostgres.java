@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 
@@ -60,7 +62,7 @@ public class TeacherDaoPostgres implements TeacherDao {
 		
 		Teacher teacher = null;
 		
-		String sql = "select teacherid, firstname, lastname, user, email  from teacher where teacherid = ?;";
+		String sql = "select teacherid, firstname, lastname, user, email from teacher where teacherid = ?;";
 		
 		try (Connection conn = connUtil.createConnection()) {
 			preparedStatement = conn.prepareStatement(sql);
@@ -90,9 +92,30 @@ public class TeacherDaoPostgres implements TeacherDao {
 	}
 
 	@Override
-	public void readAllTeachers() {
-		// TODO Auto-generated method stub
-
+	public List<Teacher> getTeacherList() {
+		
+		List<Teacher> teacherList = new ArrayList<Teacher>();
+				
+		String sql = "select teacherid, firstname, lastname, user, email from teacher;";
+		
+		try (Connection conn = connUtil.createConnection()) {
+			preparedStatement = conn.prepareStatement(sql);
+									
+			log.info("TeacherDaoPostgres.getTeacherList[In try block: Attempting to execute:\n" + preparedStatement + "]"); 
+			
+			ResultSet rs = preparedStatement.executeQuery();
+			
+			while(rs.next()) {
+				teacherList.add(new Teacher(rs.getInt("teacherid"), rs.getString("firstname"), rs.getString("lastname"), rs.getString("user"), "", rs.getString("email")));
+			}
+			
+			log.info("TeacherDaoPostgres.getTeacherList[In try block: Result of query as a teacher object:" + teacherList.toString());
+			
+		} catch (SQLException e) {
+			log.error("TeacherDaoPostgres.getTeacherList[In catch block: SQLException: " + e.getMessage() + "]");
+		}
+		
+		return teacherList;
 	}
 
 	@Override
